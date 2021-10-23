@@ -61,14 +61,20 @@ namespace KolejkaFIFO
             return q.First == -1;
         }
 
-        //public static Osoba Dequeue(ref Queue q)
-        //{
-        //    if (Queue.IsEmpty(q))
-        //        throw new InvalidOperationException("Kolejka jest pusta");
-        //    Osoba tmp;
-        //    // TODO
-        //    return tmp;
-        //}
+        public static Osoba Dequeue(ref Queue q)
+        {
+            if (Queue.IsEmpty(q))
+                throw new InvalidOperationException("Kolejka jest pusta");
+            Osoba tmp = q.Kolejka[q.First];
+            // TODO
+            // jeśli kolejka ma tylko jeden element
+            // jeśli kolejka ma więcej niż jeden element(zmiana indesku q.First)
+            // dwa podprzypadki:
+            // a) q.First jest na końcu tablicy
+            // b) q.First nie jest na końcu tablicy
+
+            return tmp;
+        }
 
         public static void Clear(ref Queue q)
         {
